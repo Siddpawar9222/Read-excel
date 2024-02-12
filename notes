@@ -1,0 +1,38 @@
+-JDK does not provide a direct API to read data from Excel files  we have to use a third-party library that is Apache POI.
+-Apache POI(Poor Obfuscation Implementation)
+-An obfuscated file format refers to a file format that is intentionally designed to be difficult for humans to understand or interpret without specialized knowledge or tools.
+-In the case of the Apache POI project, the term "obfuscated file format" specifically refers to the file formats used by Microsoft Office applications, such as Excel spreadsheets (.xls) or Word documents (.doc). These file formats were initially proprietary and not openly documented, making it difficult for developers to work with them programmatically without reverse engineering or specialized knowledge.
+
+Dependency :
+        <dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
+
+-How to read xsl file from spring boot ?
+  keep to resources folder
+  Use File file = new ClassPathResource("dummy.xls").getFile();
+    Here ClassPathResource to load the Excel file from the classpath.
+
+  Use HSSFWorkbook - for xsl file
+  Use XSSFWorkbook - for xlsx file
+
+HSSFSheet sheet = workbook.getSheetAt(0);
+ This line used to   retrieve the first sheet from the Excel workbook (HSSFWorkbook)
+
+
+- How to get file from Frontend ?
+  MultipartFile is an interface provided by the Spring framework to handle file uploads in web applications. It represents a file received in a multipart request and provides methods to access the file's content, metadata, and other information.
+  // Get input stream from MultipartFile
+    InputStream inputStream = multipartFile.getInputStream();
+
+
+@ElementCollection is useful for modeling scenarios where you have a collection of simple values associated with an entity, but those values don't have a separate identity of their own. It's particularly handy for representing one-to-many or many-to-many relationships without creating separate entity classes for the related data.
+
+
+
+
+
+
